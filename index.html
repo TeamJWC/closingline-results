@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Closing Line · Model Results</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="example-banner" class="banner" hidden>
+  <strong>EXAMPLE DATA</strong> · The stats, chart and settled-bet tables are fictional, for layout only. No system bets have settled yet; real results replace them automatically once one does.<span id="banner-real-note" hidden> The <b>Pending</b> table is real.</span>
+</div>
+<nav class="brandbar" aria-label="Closing Line">
+  <div class="wrap brandbar-in">
+    <a class="brand" href="index.html" aria-label="Closing Line home">
+      <svg class="brand-mark" viewBox="0 0 28 28" aria-hidden="true"><rect x="1" y="1" width="26" height="26" rx="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M6 18 L11 13 L15 16 L22 8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><line x1="6" y1="21.5" x2="22" y2="21.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <span class="brand-name">Closing<span>Line</span></span>
+    </a>
+    <span class="brand-tag">Results in units</span>
+  </div>
+</nav>
+<header class="wrap hero">
+  <div>
+    <p class="eyebrow">Model betting results</p>
+    <h1>Every bet. Every result.</h1>
+    <p class="sub">Settled model bets, tracked from the ledger. Results are after commission and shown in units only.</p>
+  </div>
+  <div class="hero-figure">
+    <span class="label">Units <span id="ex-tag" class="ex-tag" hidden>EXAMPLE</span></span>
+    <span id="hero-units" class="big">–</span>
+    <span id="hero-meta" class="meta"></span>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="kpis" aria-label="Headline stats">
+    <div class="kpi"><span class="label">Record (W-L-P)</span><span id="k-record" class="val">–</span></div>
+    <div class="kpi"><span class="label">Avg CLV <span id="k-clv-n" class="kpi-n"></span></span><span id="k-clv" class="val">–</span></div>
+  </section>
+
+  <section class="card">
+    <div class="card-head"><h2>Cumulative units</h2><span id="chart-range" class="muted"></span></div>
+    <div id="chart" class="chart" role="img" aria-label="Cumulative units profit over time"></div>
+  </section>
+
+  <section class="card">
+    <div class="card-head"><h2>By sport</h2></div>
+    <div class="table-scroll">
+      <table id="by-sport">
+        <thead><tr><th>Sport</th><th class="num">Bets</th><th class="num">W-L-P</th><th class="num">Units</th><th class="num">Avg CLV</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-head"><h2>Bets journal</h2><span id="journal-count" class="muted" aria-live="polite"></span></div>
+    <div id="sport-filter" class="seg" role="group" aria-label="Filter bets by sport"></div>
+    <div class="table-scroll">
+      <table id="recent">
+        <thead><tr><th>Settled</th><th>Sport</th><th>Event</th><th>Selection</th><th class="num">Odds</th><th class="num">Staked</th><th>Result</th><th class="num" title="Closing line value: price taken vs closing price">CLV</th><th class="num">Units</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div class="journal-foot"><button id="show-all" class="link-btn" type="button" hidden></button></div>
+  </section>
+
+  <section id="open-card" class="card" hidden>
+    <div class="card-head"><h2>Pending <span id="real-tag" class="real-tag" hidden>REAL · live ledger</span></h2><span class="muted">Open bets, not yet in the stats</span></div>
+    <div class="table-scroll">
+      <table id="open">
+        <thead><tr><th>Starts</th><th>Sport</th><th>Event</th><th>Selection</th><th class="num">Odds</th><th class="num">Staked</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap foot">
+  <p>Units only, after commission. Record is W-L-P (P = push/void). Per-bet stake is in units (lays show their liability). CLV = closing line value, the price taken vs the closing price (average over bets with a recorded close). Times are Sydney.</p>
+  <p>Scenario bets (<span class="pill scenario">scenario</span>) are conditional calls built on a model scenario. They're included so every real system bet is shown.</p>
+  <p id="source-line" class="muted"></p>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <span class="brand-name small">Closing<span>Line</span></span>
+      <ul class="links">
+        <li><a href="https://x.com/ClosingLineAU" rel="noopener" target="_blank">X @ClosingLineAU</a></li>
+        <li><a href="https://closinglinebets.substack.com" rel="noopener" target="_blank">Substack</a></li>
+        <li><a href="mailto:closingline@mail.grokbot.com">closingline@mail.grokbot.com</a></li>
+      </ul>
+    </div>
+    <div class="rg">
+      <p class="rg-head"><span class="age">18+</span> 18+ only. Chances are you're about to lose.</p>
+      <p>For free and confidential support call <a href="tel:1800858858">1800 858 858</a> or visit <a href="https://www.gamblinghelponline.org.au" rel="noopener" target="_blank">gamblinghelponline.org.au</a></p>
+      <p>Self-exclude from all licensed Australian online bookmakers with BetStop: <a href="https://www.betstop.gov.au" rel="noopener" target="_blank">betstop.gov.au</a></p>
+    </div>
+  </div>
+  <p class="copy muted">© <span id="yr">2026</span> Closing Line. Past results don't guarantee future results.</p>
+</footer>
+
+<script src="example-data.js"></script>
+<script src="data.js" onerror="window.RESULTS_DATA = null"></script>
+<script src="app.js"></script>
+</body>
+</html>
